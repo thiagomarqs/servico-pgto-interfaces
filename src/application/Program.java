@@ -41,11 +41,14 @@ public class Program {
 		 * posição do array de parcelas do contrato e printando seu toString()
 		 */
 		System.out.println("Parcelas: ");
+		double total = 0.0;
 		for(Installment p : contrato.getInstallments()) {
+			total+=p.getAmount();
 			sb.append(p.toString());
 			sb.append("\n");
 		}
 		System.out.println(sb.toString());
+		System.out.println("Total: " + String.format("%.2f", total));
 		sc.close();
 	}
 
